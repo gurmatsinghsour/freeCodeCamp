@@ -17,39 +17,65 @@
             </ul>
         </nav>
     </section>
-    <section id="main">
+    
+    <section id="main">     
+        <div id="particles-js" class="body-particles"></div>
 
-        <div class="main-dec">
-            
-            <div class="main-div-text">
-                <h1 class="main-text">A Tribute page</h1>
-                <h2 class="main-text-2">-by Gurmat Singh Sour</h2>
+        
+            <div class="main-dec">
+                
+                <div class="main-div-text">
+                    <h1 class="main-text">A Tribute page</h1>
+                    <h2 class="main-text-2">-by Gurmat Singh Sour</h2>
+                </div>
+            </div>
+            <div class="intro reveal">
+                <div class="image-text-d"> 
+                    <div id="image-div" class="image-div">
+                        <img src="img/img1.jpg" alt="alistairimg" class="profile-image">
+                        <p id="img-caption" align="center">Alistair Cockburn in 2007</p>
+                    </div>
+                    
+                    <div class="text-div">
+                        <h1 id="title" class="name-h"">Alistair Cockburn</h1>
+                        <hr>
+                        <p id="tribute-info" class="name-p"">Alistair Cockburn is an American computer scientist,
+                            known as one of the initiators of the agile 
+                            movement in software development. He cosigned 
+                            (with 17 others) the Manifesto for Agile Software 
+                            Development.Cockburn started studying the methods of object oriented (OO) software development for IBM. From 1994, 
+                            he formed "Humans and Technology" in Salt Lake City. He obtained his degree in computer science at the Case Western Reserve University. 
+                            In 2003 he received his PhD degree from the University of Oslo.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="intro">
-            <div class="image-text-d"> 
-                <div id="image-div" class="image-div">
-                    <img src="img/img1.jpg" alt="alistairimg" class="profile-image">
-                    <p id="img-caption" align="center">Alistair Cockburn in 2007</p>
-                </div>
-                
-                <div class="text-div">
-                    <h1 id="title" class="name-h"">Alistair Cockburn</h1>
-                    <hr>
-                    <p id="tribute-info" class="name-p"">Alistair Cockburn is an American computer scientist,
-                        known as one of the initiators of the agile 
-                        movement in software development. He cosigned 
-                        (with 17 others) the Manifesto for Agile Software 
-                        Development.Cockburn started studying the methods of object oriented (OO) software development for IBM. From 1994, 
-                        he formed "Humans and Technology" in Salt Lake City. He obtained his degree in computer science at the Case Western Reserve University. 
-                        In 2003 he received his PhD degree from the University of Oslo.</p>
-                </div>
-        </div>
-        </div>
     </section>
+    
     <section>
         
     </section>
-    
-</body>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script>
+
+        function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 300;
+
+            if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            } else {
+            reveals[i].classList.remove("active");
+            }
+        }
+        }
+
+        window.addEventListener("scroll", reveal);
+    </script>
+</body> 
 </html>
